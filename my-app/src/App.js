@@ -36,7 +36,7 @@ function App() {
           <Todo
             todo={todo}
             key={todo.id}
-            toggle={handleToggle}
+            toggleTask={handleToggle}
             removeTask={removeTask}
           />
         );
