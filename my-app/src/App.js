@@ -1,7 +1,7 @@
+import React from "react";
 import { useState } from "react";
 import Todo from "./Todo.js";
 import TodoForm from "./TodoForm.js";
-
 function App() {
   const [todos, setTodos] = useState([]);
 
@@ -15,8 +15,16 @@ function App() {
       setTodos([...todos, newItem]);
     }
   };
-  const removeTask = () => {};
-  const handleToggle = () => {};
+  const removeTask = (id) => {
+    setTodos([...todos.filter((todo) => todo.id !== id)]);
+  };
+  const handleToggle = (id) => {
+    setTodos([
+      ...todos.map((todo) =>
+        todo.id === id ? { ...todo, complete: !todo.complete } : { ...todo }
+      ),
+    ]);
+  };
   return (
     <div className="App">
       <heder>
