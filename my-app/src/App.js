@@ -4,8 +4,10 @@ import Todo from "./Todo.js";
 import TodoForm from "./TodoForm.js";
 function App() {
   const [todos, setTodos] = useState([]);
+  console.log(todos);
 
   const addTask = (userInput) => {
+    console.log(userInput);
     if (userInput) {
       const newItem = {
         id: Math.random().toString(36).substring(2, 9),
@@ -13,6 +15,7 @@ function App() {
         complete: false,
       };
       setTodos([...todos, newItem]);
+      console.log(setTodos);
     }
   };
   const removeTask = (id) => {
